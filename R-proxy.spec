@@ -4,7 +4,7 @@
 #
 Name     : R-proxy
 Version  : 0.4.23
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/proxy_0.4-23.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/proxy_0.4-23.tar.gz
 Summary  : Distance and Similarity Measures
@@ -32,10 +32,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551804965
+export SOURCE_DATE_EPOCH=1552782302
 
 %install
-export SOURCE_DATE_EPOCH=1551804965
+export SOURCE_DATE_EPOCH=1552782302
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,8 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library proxy|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  proxy || :
 
 
 %files
@@ -102,10 +101,18 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/proxy/help/proxy.rdx
 /usr/lib64/R/library/proxy/html/00Index.html
 /usr/lib64/R/library/proxy/html/R.css
-/usr/lib64/R/library/proxy/libs/symbols.rds
+/usr/lib64/R/library/proxy/tests/apply.R
+/usr/lib64/R/library/proxy/tests/apply.Rout.save
+/usr/lib64/R/library/proxy/tests/distance.R
+/usr/lib64/R/library/proxy/tests/distance.Rout.save
+/usr/lib64/R/library/proxy/tests/distcalls.R
+/usr/lib64/R/library/proxy/tests/distcalls.Rout.save
+/usr/lib64/R/library/proxy/tests/registry.R
+/usr/lib64/R/library/proxy/tests/registry.Rout.save
+/usr/lib64/R/library/proxy/tests/util.R
+/usr/lib64/R/library/proxy/tests/util.Rout.save
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/proxy/libs/proxy.so
 /usr/lib64/R/library/proxy/libs/proxy.so.avx2
-/usr/lib64/R/library/proxy/libs/proxy.so.avx512
