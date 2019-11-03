@@ -4,7 +4,7 @@
 #
 Name     : R-proxy
 Version  : 0.4.23
-Release  : 23
+Release  : 24
 URL      : https://cran.r-project.org/src/contrib/proxy_0.4-23.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/proxy_0.4-23.tar.gz
 Summary  : Distance and Similarity Measures
