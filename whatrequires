@@ -1,3 +1,4 @@
 # This file contains recursive sources that require this package
 R-dtw
+R-e1071
 R-sets
